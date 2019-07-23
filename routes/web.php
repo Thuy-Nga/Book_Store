@@ -15,4 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', 'Frontend\FrontendController@test');
+Route::get('test', function(){
+    return view('backend.layout.master');
+});
