@@ -15,6 +15,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('test', function(){
-    return view('backend.layout.master');
-});
+// Route cho backend
+// Route cho Loai
+Route::get('/admin/danhsachloai','LoaiController@index')->name('admin.loai.index');
+Route::get('/admin/taomoiloai','LoaiController@create')->name('admin.loai.create');
+Route::post('/admin/luuloai','LoaiController@store')->name('admin.loai.store');
+Route::get('/admin/chinhsua{id}','LoaiController@edit')->name('admin.loai.edit');
+Route::put('/admin/capnhat{id}','LoaiController@update')->name('admin.loai.update');
+Route::delete('/admin/xoa{id}','LoaiController@destroy')->name('admin.loai.delete');

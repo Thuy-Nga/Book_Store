@@ -11,8 +11,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/backend.css')}}">
-
-    <title> Sunshine | @yield('title')</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title> BookStore | @yield('title')</title>
 
     <!-- Các custom css cho từng view -->
     @yield('custom-css');
@@ -26,10 +26,10 @@
 
     <div class="container-fluid">
         <div class="row">
-
             <!-- SlideBar -->
             @include('backend/layout/partials/slidebar')
             <!-- end SlideBar -->
+
 
             <!-- Content -->
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
@@ -38,8 +38,10 @@
                     <small> @yield('content-title-small') </small>
                 </div>
                 <br />
+                @include('backend/layout/partials/error-message')
 
                 @yield('content')
+
             </main>
             <!-- end content -->
         </div>
@@ -51,6 +53,9 @@
     <script src="{{ asset('vendor/popper/popper.min.js')}}"></script>
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 
+    <!-- Thư viện Jquery validation -->
+    <script src="{{ asset('vendor/jquery-validation/jquery.validate.min.js') }}"></script>
+    <script src="{{ asset('vendor/jquery-validation/localization/messages_vi.min.js') }}"></script>
     <!-- Custom script dành cho từng view-->
     @yield('custom-script')
 </body>

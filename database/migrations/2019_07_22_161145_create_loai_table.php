@@ -16,8 +16,7 @@ class CreateLoaiTable extends Migration
         Schema::create('loai', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('l_ma');
-            $table->string('l_ten');; 
-            $table->string('l_hinh');
+            $table->string('l_ten');
             $table->timestamp('l_taoMoi')
                 ->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('l_capNhat')
