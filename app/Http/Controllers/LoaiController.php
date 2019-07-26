@@ -7,6 +7,7 @@ use App\Loai;
 use Illuminate\Support\Facades\DB;
 use Validator;
 use App\Http\Requests\LoaiCreateRequest;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class LoaiController extends Controller
 {
@@ -115,6 +116,17 @@ class LoaiController extends Controller
 
         $loai = Loai::find($id)->delete();
         return redirect()->route('admin.loai.index');
+    }
+
+    public function pdf(){
+        $danhsachloai = Loai::all();
+
+        $data = [ 'danhsachloai'=>$danhsachloai ];
+        // return view('backend.loai.pdf')
+        // ->with('danhsachloai', $danhsachloai);
+        
+        $pdf = PDF::loadView('backend.loai.pdf', $data);
+        return $pdf->download('DanhMucSach.pdf');
     }
 }
 

@@ -23,3 +23,4 @@ Route::post('/admin/luuloai','LoaiController@store')->name('admin.loai.store');
 Route::get('/admin/chinhsua{id}','LoaiController@edit')->name('admin.loai.edit');
 Route::put('/admin/capnhat{id}','LoaiController@update')->name('admin.loai.update');
 Route::delete('/admin/xoa{id}','LoaiController@destroy')->name('admin.loai.delete');
+Route::get('/admin/xuatPDF','LoaiController@pdf')->name('admin.loai.pdf');

@@ -49,7 +49,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.loai.pdf') === 0 ) ? 'active' : ''}}" href="{{ route('admin.loai.pdf') }}">
                                 Xuất PDF
                             </a>
                         </li>
