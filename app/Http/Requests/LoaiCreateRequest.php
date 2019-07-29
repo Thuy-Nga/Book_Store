@@ -18,6 +18,7 @@ class LoaiCreateRequest extends FormRequest
 
     /**
      * Get the validation rules that apply to the request.
+     * Ràng buộc phía Serve
      *
      * @return array
      */

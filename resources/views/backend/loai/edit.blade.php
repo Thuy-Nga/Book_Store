@@ -5,7 +5,7 @@ Trang chỉnh sửa
 @endsection
 
 @section('content-title')
-Chỉnh sửa chủ đề
+Chỉnh sửa loại
 @endsection
 
 @section('content')

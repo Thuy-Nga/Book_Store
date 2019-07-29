@@ -24,3 +24,11 @@ Route::get('/admin/chinhsua{id}','LoaiController@edit')->name('admin.loai.edit')
 Route::put('/admin/capnhat{id}','LoaiController@update')->name('admin.loai.update');
 Route::delete('/admin/xoa{id}','LoaiController@destroy')->name('admin.loai.delete');
 Route::get('/admin/xuatPDF','LoaiController@pdf')->name('admin.loai.pdf');
+
+// Route cho San Pham
+Route::get('/admin/danhsachsanpham','SanPhamController@index')->name('admin.sanpham.index');
+Route::get('/admin/taomoisanpham','SanPhamController@create')->name('admin.sanpham.create');
+Route::post('/admin/luusp','SanPhamController@store')->name('admin.sanpham.store');
+Route::get('/admin/chinhsua{id}','SanPhamController@edit')->name('admin.sanpham.edit');
+Route::put('/admin/capnhat{id}','SanPhamController@update')->name('admin.sanpham.update');
+Route::delete('/admin/xoa{id}','SanPhamController@destroy')->name('admin.sanpham.destroy');

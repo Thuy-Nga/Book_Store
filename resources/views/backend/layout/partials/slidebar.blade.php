@@ -58,7 +58,7 @@
                 </ul>
                 <ul class="nav flex-column mb-2">
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.sanpham.index') === 0 ) ? 'active' : ''}}" href="{{ route('admin.sanpham.index') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                                 <polyline points="14 2 14 8 20 8"></polyline>
@@ -69,6 +69,23 @@
                             Sản phẩm
                         </a>
                     </li>
+                    <ul style="list-style-type:none;">
+                        <li class="nav-item">
+                            <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.sanpham.create') === 0 ) ? 'active' : ''}}" href="{{ route('admin.sanpham.create') }}">
+                                Thêm mới
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.sanpham.insp') === 0 ) ? 'active' : ''}}" href="">
+                                In danh sách
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.sanpham.pdf') === 0 ) ? 'active' : ''}}" href="">
+                                Xuất PDF
+                            </a>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </nav>
