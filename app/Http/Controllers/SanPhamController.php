@@ -7,6 +7,7 @@ use App\SanPham;
 use App\Loai;
 use Validator;
 use App\Http\Requests\SanPhamCreateRequest;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class SanPhamController extends Controller
 {
@@ -155,5 +156,25 @@ class SanPhamController extends Controller
         $sp = SanPham::find($id)->delete();
 
         return redirect()->route('admin.sanpham.index');
+    }
+
+    public function pdf(){
+
+        $dsSanPham = SanPham::all();
+        $dsLoai = Loai::all();
+        $data = [
+            'danhsachloai'=>$dsLoai,
+            'danhsachsanpham'=>$dsSanPham
+        ];
+
+        $pdf = PDF::loadView('backend.sanpham.pdf', $data);
+        return $pdf->download('SanPham.pdf');
+    }
+
+    public function print(){
+        $danhsachsanpham = SanPham::all();
+
+        return view('backend.sanpham.print')
+            ->with('danhsachsanpham', $danhsachsanpham);
     }
 }

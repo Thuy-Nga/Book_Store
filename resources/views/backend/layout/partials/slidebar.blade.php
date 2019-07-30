@@ -76,12 +76,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.sanpham.insp') === 0 ) ? 'active' : ''}}" href="">
+                            <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.sanpham.print') === 0 ) ? 'active' : ''}}" href="{{ route('admin.sanpham.print') }}">
                                 In danh sách
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.sanpham.pdf') === 0 ) ? 'active' : ''}}" href="">
+                            <a class="nav-link {{ (strpos(Route::currentRouteName(), 'admin.sanpham.pdf') === 0 ) ? 'active' : ''}}" href="{{ route('admin.sanpham.pdf') }}">
                                 Xuất PDF
                             </a>
                         </li>
